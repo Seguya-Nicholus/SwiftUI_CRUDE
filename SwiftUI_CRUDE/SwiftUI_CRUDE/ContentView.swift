@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var usersArray: [User] = []
+    
     var body: some View {
         
         // create navigation view
@@ -24,7 +27,26 @@ struct ContentView: View {
                             Text("Add User")
                         })
                 }
-            }
+                
+                //  create listview to show all users
+                List(self.usersArray) { (model) in
+                    
+                    // show name, email and age horizontally
+                    HStack {
+                        Text(model.name)
+                        Spacer()
+                        Text(model.email)
+                        Spacer()
+                        Text("\(model.age)")
+                        
+                    }
+                }
+            }.padding()
+                
+                // load data in the users array
+                    .onAppear(perform: {
+                        self.usersArray = DbUtils().getUsers()
+                    })
         }
     }
 }
