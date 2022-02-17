@@ -9,6 +9,7 @@ import Foundation
 
 //import library
 import SQLite
+import UIKit
 
 class DbUtils {
     // sqlite instance
@@ -76,5 +77,56 @@ class DbUtils {
             print(error.localizedDescription)
         }
         
+    }
+    
+    
+    // function to return all users
+    public func getUsers() -> [User] {
+        
+        // create an empty array
+        var usersArray: [User] = []
+        
+        // get all user in descending order
+        users = users.order(id.desc)
+        
+        
+        
+//        let query = self.draftItems.filter(self.invoiceId == record.id)
+//        let result = select(query: query)
+//        for s in result {
+//            let record = queryRowToGeneralJournal(s: s)
+//            records.append(record)
+//        }
+//        return records
+        
+        
+        
+        
+        
+        // handle exception
+        do {
+            
+            // loop through all users
+            for user in try db.prepare(users) {
+                
+                // create model in each loop iteration
+                let userModel: User = User()
+                
+                // set values of model from database
+                userModel.id = user[id]
+                userModel.name = user[name]
+                userModel.email = user[email]
+                userModel.age = user[age]
+                
+                
+                // append in new array
+                usersArray.append(userModel)
+            }
+            
+        } catch  {
+            print(error.localizedDescription)
+        }
+        
+        return usersArray
     }
 }
