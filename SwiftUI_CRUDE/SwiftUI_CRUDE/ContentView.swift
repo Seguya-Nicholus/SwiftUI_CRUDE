@@ -9,8 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        // create navigation view
+        NavigationView {
+            
+            VStack {
+                
+                // Create link to add new user
+                HStack {
+                    Spacer()
+                    NavigationLink(
+                        destination: AddNewUserView(),
+                        label: {
+                            Text("Add User")
+                        })
+                }
+            }
+        }
     }
 }
 
