@@ -162,4 +162,18 @@ class DbUtils {
     }
     
     
+    // function to delete user
+    public func deleteUser(idValue: Int64) {
+        
+        do {
+            // get user by Id
+            let user: Table = users.filter(id == idValue)
+            
+            // run the delete query
+            try db.run(user.delete())
+        } catch  {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
