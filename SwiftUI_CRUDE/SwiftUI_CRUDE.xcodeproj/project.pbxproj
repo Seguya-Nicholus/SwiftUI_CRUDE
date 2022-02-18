@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87A7EE4F27BE880500F3F208 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A7EE4E27BE880500F3F208 /* EditUserView.swift */; };
 		87AD6F2B27BE40860075BBB3 /* SwiftUI_CRUDEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD6F2A27BE40860075BBB3 /* SwiftUI_CRUDEApp.swift */; };
 		87AD6F2D27BE40860075BBB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD6F2C27BE40860075BBB3 /* ContentView.swift */; };
 		87AD6F2F27BE408C0075BBB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87AD6F2E27BE408C0075BBB3 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		2BC87C251738AF2208E787A6 /* Pods-SwiftUI_CRUDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI_CRUDE.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUI_CRUDE/Pods-SwiftUI_CRUDE.debug.xcconfig"; sourceTree = "<group>"; };
 		4F1291C2AE75EF6BDBB3472D /* Pods_SwiftUI_CRUDE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUI_CRUDE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9FE426CF1B3422FBD0C254 /* Pods-SwiftUI_CRUDE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI_CRUDE.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI_CRUDE/Pods-SwiftUI_CRUDE.release.xcconfig"; sourceTree = "<group>"; };
+		87A7EE4E27BE880500F3F208 /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
 		87AD6F2727BE40860075BBB3 /* SwiftUI_CRUDE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_CRUDE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AD6F2A27BE40860075BBB3 /* SwiftUI_CRUDEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CRUDEApp.swift; sourceTree = "<group>"; };
 		87AD6F2C27BE40860075BBB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				87AD6F4127BE65750075BBB3 /* AddNewUserView.swift */,
+				87A7EE4E27BE880500F3F208 /* EditUserView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				87AD6F2D27BE40860075BBB3 /* ContentView.swift in Sources */,
 				87AD6F4227BE65750075BBB3 /* AddNewUserView.swift in Sources */,
 				87AD6F2B27BE40860075BBB3 /* SwiftUI_CRUDEApp.swift in Sources */,
+				87A7EE4F27BE880500F3F208 /* EditUserView.swift in Sources */,
 				87AD6F3C27BE4EEE0075BBB3 /* User.swift in Sources */,
 				87AD6F3F27BE4FF70075BBB3 /* DbUtils.swift in Sources */,
 			);
