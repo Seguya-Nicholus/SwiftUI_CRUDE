@@ -65,6 +65,23 @@ struct ContentView: View {
                         // by default buttons are full width , to prevent this use the following
                             .buttonStyle(PlainButtonStyle())
                         
+                        //  button to delete user
+                        Button(action: {
+                            // create a db instance
+                            let dbManager: DbUtils = DbUtils()
+                            
+                            // call delete function
+                            dbManager.deleteUser(idValue: model.id)
+                            
+                            // refresh the user model array
+                            self.usersArray = dbManager.getUsers()
+                        }, label: {
+                            Text("Delete")
+                            .foregroundColor(Color.red)}
+                        )
+                        // by default buttons are full width , to prevent this use the following
+                            .buttonStyle(PlainButtonStyle())
+                        
                     }
                 }
             }.padding()
