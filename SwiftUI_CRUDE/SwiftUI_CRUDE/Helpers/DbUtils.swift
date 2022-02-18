@@ -89,20 +89,6 @@ class DbUtils {
         // get all user in descending order
         users = users.order(id.desc)
         
-        
-        
-//        let query = self.draftItems.filter(self.invoiceId == record.id)
-//        let result = select(query: query)
-//        for s in result {
-//            let record = queryRowToGeneralJournal(s: s)
-//            records.append(record)
-//        }
-//        return records
-        
-        
-        
-        
-        
         // handle exception
         do {
             
@@ -129,4 +115,51 @@ class DbUtils {
         
         return usersArray
     }
+    
+    
+    public func getUser(idValue: Int64) -> User {
+        
+        // create an empty object
+        let userModel: User = User()
+        
+        // handle exception
+        do {
+
+            // get user using id
+            let user: AnySequence<Row> = try db.prepare(users.filter(id == idValue))
+            
+            // get row
+            try user.forEach({ (rowValue) in
+                
+               // set values in model
+                userModel.id = try rowValue.get(id)
+                userModel.name = try rowValue.get(name)
+                userModel.email = try rowValue.get(email)
+                userModel.age = try rowValue.get(age)
+            })
+            
+        } catch  {
+            print(error.localizedDescription)
+        }
+        
+        return userModel
+    }
+    
+    
+    // function to update user
+    public func updateUser(idValue: Int64, nameValue: String, emailValue: String, ageValue: Int64) {
+        
+        do {
+            
+            // get user by Id
+            let user: Table = users.filter(id == idValue)
+            
+            // run the update query
+            try db.run(user.update(name <- nameValue, email <- emailValue, age <- ageValue))
+        } catch  {
+            print(error.localizedDescription)
+        }
+    }
+    
+    
 }
